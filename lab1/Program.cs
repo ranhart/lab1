@@ -5,6 +5,8 @@
         static void Main(string[] args)
         {
             var prog = new Program();
+            Random rnd = new Random();
+
 
             //while (true) // Задание 1.1
             //{
@@ -195,11 +197,33 @@
             //    Console.WriteLine("Ошибка ввода.");
             //}
 
-            //while (true) // задание 4.1
+            while (true) // задание 4.1
+            {
+                Console.Write("Задание №4.1. Введите число: ");
+                string x = Console.ReadLine();
+                int arrSize = rnd.Next(5, 11);
+                int[] arr = new int [arrSize];
+                for(int i = 0; i < arrSize, i++)
+                {
+                    arr[i] = rnd.Next(1, 9);
+                }
+                if (int.TryParse(x, out int num))
+                {
+                    for (int j = 0; j < arrSize; j++)
+                    {
+                        Console.Write(arr[j] + " ");
+                    }
+                    Console.WriteLine("Ответ: {0}", prog.findFirst(arr, num));
+                    break;
+                }
+                Console.WriteLine("Ошибка ввода.");
+            }
+
+            //while (true) // задание 4.3
             //{
-            //    Console.Write("Задание №4.1. Введите число: ");
+            //    Console.Write("Задание №4.3. Введите число: ");
             //    string x = Console.ReadLine();
-            //    int[] arr = {1, 2, 3, 4, 2, 2, 5};
+            //    int[] arr = { 1, 2, 3, 4, 2, 2, 5 };
             //    if (int.TryParse(x, out int num))
             //    {
             //        Console.WriteLine("Ответ: {0}", prog.findFirst(arr, num));
@@ -207,19 +231,6 @@
             //    }
             //    Console.WriteLine("Ошибка ввода.");
             //}
-
-            while (true) // задание 4.3
-            {
-                Console.Write("Задание №4.3. Введите число: ");
-                string x = Console.ReadLine();
-                int[] arr = { 1, 2, 3, 4, 2, 2, 5 };
-                if (int.TryParse(x, out int num))
-                {
-                    Console.WriteLine("Ответ: {0}", prog.findFirst(arr, num));
-                    break;
-                }
-                Console.WriteLine("Ошибка ввода.");
-            }
         }
         public double fraction(double x)
         {
