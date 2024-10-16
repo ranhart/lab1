@@ -8,348 +8,411 @@ namespace lab1
         {
             var prog = new Program();
             Random rnd = new Random();
-
-
-            while (true) // Задание 1.1
+            while (true)
             {
-                Console.Write("Задание №1.1. Введите десятичную дробь х: ");
-                string x = Console.ReadLine();
-                if (double.TryParse(x, out double num))
+                Console.WriteLine("-----------------------------------------------------------------------");
+                Console.WriteLine("Введите номер задания: ");
+                string str = Console.ReadLine();
+                int zad = 0;
+                if (int.TryParse(str, out int num_zad)) zad = num_zad;
+                switch (zad)
                 {
-                    Console.WriteLine("Ответ: {0}", prog.fraction(num));
-                    break;
+                    case 1:
+                        while (true) // Задание 1.1
+                        {
+                            Console.Write("Задание №1.1. Введите десятичную дробь х: ");
+                            string x = Console.ReadLine();
+                            if (double.TryParse(x, out double num))
+                            {
+                                Console.WriteLine("Ответ: {0}", prog.fraction(num));
+                                break;
+                            }
+                            Console.WriteLine("Ошибка ввода.");
+                        }
+                        break;
+                    case 2:
+                        while (true) // Задание 1.3
+                        {
+                            Console.Write("Задание №1.3. Введите символ из перечня: 0 1 2 3 4 5 6 7 8 9: ");
+                            string x = Console.ReadLine();
+                            if (char.TryParse(x, out char num) && Char.IsDigit(Convert.ToChar(x)))
+                            {
+                                Console.WriteLine("Ответ: {0}", prog.charToNum(num));
+                                break;
+                            }
+                            Console.WriteLine("Ошибка ввода.");
+                        }
+                        break;
+                    case 3:
+                        while (true) // Задание 1.5
+                        {
+                            Console.Write("Задание №1.5. Введите число: ");
+                            string x = Console.ReadLine();
+                            if (int.TryParse(x, out int num))
+                            {
+                                Console.WriteLine("Ответ: {0}", prog.is2Digits(num));
+                                break;
+                            }
+                            Console.WriteLine("Ошибка ввода.");
+                        }
+                        break;
+                    case 4:
+                        while (true) // Задание 1.7
+                        {
+                            Console.Write("Задание №1.7. Введите числовой диапазон и число: ");
+                            string a = Console.ReadLine();
+                            string b = Console.ReadLine();
+                            string x = Console.ReadLine();
+                            if (int.TryParse(a, out int num1) && int.TryParse(b, out int num2) && int.TryParse(x, out int num3))
+                            {
+                                Console.WriteLine("Ответ: {0}", prog.isInRange(num1, num2, num3));
+                                break;
+                            }
+                            Console.WriteLine("Ошибка ввода.");
+                        }
+                        break;
+                    case 5:
+                        while (true) // Задание 1.9
+                        {
+                            Console.Write("Задание №1.9. Введите три одинаковых числа: ");
+                            string a = Console.ReadLine();
+                            string b = Console.ReadLine();
+                            string с = Console.ReadLine();
+                            if (int.TryParse(a, out int num1) && int.TryParse(b, out int num2) && int.TryParse(с, out int num3))
+                            {
+                                Console.WriteLine("Ответ: {0}", prog.isEqual(num1, num2, num3));
+                                break;
+                            }
+                            Console.WriteLine("Ошибка ввода.");
+                        }
+                        break;
+                    case 6:
+                        while (true) // задание 2.1
+                        {
+                            Console.Write("Задание №2.1. Введите число: ");
+                            string a = Console.ReadLine();
+                            if (int.TryParse(a, out int num))
+                            {
+                                Console.WriteLine("Ответ: {0}", prog.abs(num));
+                                break;
+                            }
+                            Console.WriteLine("Ошибка ввода.");
+                        }
+                        break;
+                    case 7:
+                        while (true) // задание 2.3
+                        {
+                            Console.Write("Задание №2.3. Введите число: ");
+                            string a = Console.ReadLine();
+                            if (int.TryParse(a, out int num))
+                            {
+                                Console.WriteLine("Ответ: {0}", prog.is35(num));
+                                break;
+                            }
+                            Console.WriteLine("Ошибка ввода.");
+                        }
+                        break;
+                    case 8:
+                        while (true) // задание 2.5
+                        {
+                            Console.Write("Задание №2.5. Введите число: ");
+                            string a = Console.ReadLine();
+                            string b = Console.ReadLine();
+                            string c = Console.ReadLine();
+                            if (int.TryParse(a, out int num1) && int.TryParse(b, out int num2) && int.TryParse(c, out int num3))
+                            {
+                                Console.WriteLine("Ответ: {0}", prog.max3(num1, num2, num3));
+                                break;
+                            }
+                            Console.WriteLine("Ошибка ввода.");
+                        }
+                        break;
+                    case 9:
+                        while (true) // задание 2.7
+                        {
+                            Console.Write("Задание №2.7. Введите число: ");
+                            string a = Console.ReadLine();
+                            string b = Console.ReadLine();
+                            if (int.TryParse(a, out int num1) && int.TryParse(b, out int num2))
+                            {
+                                Console.WriteLine("Ответ: {0}", prog.sum2(num1, num2));
+                                break;
+                            }
+                            Console.WriteLine("Ошибка ввода.");
+                        }
+                        break;
+                    case 10:
+                        while (true) // задание 2.9
+                        {
+                            Console.Write("Задание №2.9. Введите число: ");
+                            string x = Console.ReadLine();
+                            if (int.TryParse(x, out int num))
+                            {
+                                Console.WriteLine("Ответ: {0}", prog.day(num));
+                                break;
+                            }
+                            Console.WriteLine("Ошибка ввода.");
+                        }
+                        break;
+                    case 11:
+                        while (true) // задание 3.1
+                        {
+                            Console.Write("Задание №3.1. Введите число: ");
+                            string x = Console.ReadLine();
+                            if (int.TryParse(x, out int num))
+                            {
+                                Console.WriteLine("Ответ: {0}", prog.listNums(num));
+                                break;
+                            }
+                            Console.WriteLine("Ошибка ввода.");
+                        }
+                        break;
+                    case 12:
+                        while (true) // задание 3.3
+                        {
+                            Console.Write("Задание №3.3. Введите число: ");
+                            string x = Console.ReadLine();
+                            if (int.TryParse(x, out int num))
+                            {
+                                Console.WriteLine("Ответ: {0}", prog.chet(num));
+                                break;
+                            }
+                            Console.WriteLine("Ошибка ввода.");
+                        }
+                        break;
+                    case 13:
+                        while (true) // задание 3.5
+                        {
+                            Console.Write("Задание №3.5. Введите число: ");
+                            string x = Console.ReadLine();
+                            if (long.TryParse(x, out long num))
+                            {
+                                Console.WriteLine("Ответ: {0}", prog.numLen(num));
+                                break;
+                            }
+                            Console.WriteLine("Ошибка ввода.");
+                        }
+                        break;
+                    case 14:
+                        while (true) // задание 3.7
+                        {
+                            Console.Write("Задание №3.7. Введите число: ");
+                            string x = Console.ReadLine();
+                            if (int.TryParse(x, out int num))
+                            {
+                                Console.WriteLine("Ответ: ");
+                                prog.square(num);
+                                break;
+                            }
+                            Console.WriteLine("Ошибка ввода.");
+                        }
+                        break;
+                    case 15:
+                        while (true) // задание 3.9
+                        {
+                            Console.Write("Задание №3.9. Введите число: ");
+                            string x = Console.ReadLine();
+                            if (int.TryParse(x, out int num))
+                            {
+                                Console.WriteLine("Ответ: ");
+                                prog.rightTriangle(num);
+                                break;
+                            }
+                            Console.WriteLine("Ошибка ввода.");
+                        }
+                        break;
+                    case 16:
+                        while (true) // задание 4.1
+                        {
+                            Console.Write("Задание №4.1. Введите размер массива: ");
+                            string a = Console.ReadLine();
+                            Console.WriteLine("Введите число x: ");
+                            string x = Console.ReadLine();
+                            if (uint.TryParse(a, out uint num1) && int.TryParse(x, out int num2))
+                            {
+                                uint arrSize = num1;
+                                int[] arr = new int[arrSize];
+                                for (int i = 0; i < arrSize; i++)
+                                {
+                                    arr[i] = rnd.Next(1, 10);
+                                }
+                                for (int j = 0; j < arrSize; j++)
+                                {
+                                    Console.Write(arr[j] + " ");
+                                }
+                                Console.WriteLine();
+                                Console.WriteLine("Ответ: {0}", prog.findFirst(arr, num2));
+                                break;
+                            }
+                            Console.WriteLine("Ошибка ввода.");
+                        }
+                        break;
+                    case 17:
+                        while (true) // задание 4.3
+                        {
+                            Console.Write("Задание №4.3. Введите размер массива: ");
+                            string x = Console.ReadLine();
+                            if (uint.TryParse(x, out uint num))
+                            {
+                                uint arrSize = num;
+                                int[] arr = new int[arrSize];
+                                for (int i = 0; i < arrSize; i++)
+                                {
+                                    arr[i] = rnd.Next(-9, 10);
+                                }
+                                for (int j = 0; j < arrSize; j++)
+                                {
+                                    Console.Write(arr[j] + " ");
+                                }
+                                Console.WriteLine();
+                                Console.WriteLine("Ответ: {0}", prog.maxAbs(arr));
+                                break;
+                            }
+                            Console.WriteLine("Ошибка ввода.");
+                        }
+                        break;
+                    case 18:
+                        while (true) // задание 4.5
+                        {
+                            Console.Write("Задание №4.5. Введите размер массива: ");
+                            string x = Console.ReadLine();
+                            Console.Write("Введите размер второго массива: ");
+                            string y = Console.ReadLine();
+                            Console.Write("Введите позицию: ");
+                            string z = Console.ReadLine();
+                            if (uint.TryParse(x, out uint num1) && uint.TryParse(y, out uint num2) && int.TryParse(z, out int num3))
+                            {
+                                uint arrSize = num1;
+                                uint insSize = num2;
+                                int pos = num3;
+                                int[] arr = new int[arrSize];
+                                for (int i = 0; i < arrSize; i++)
+                                {
+                                    arr[i] = rnd.Next(0, 10);
+                                }
+                                int[] ins = new int[insSize];
+                                for (int i = 0; i < insSize; i++)
+                                {
+                                    ins[i] = rnd.Next(0, 10);
+                                }
+                                for (int j = 0; j < arrSize; j++)
+                                {
+                                    Console.Write(arr[j] + " ");
+                                }
+                                Console.WriteLine();
+                                for (int k = 0; k < insSize; k++)
+                                {
+                                    Console.Write(ins[k] + " ");
+                                }
+                                Console.WriteLine();
+                                Console.WriteLine("Ответ: ");
+                                int[] answer = prog.add(arr, ins, pos);
+                                for (int l = 0; l < answer.Length; l++)
+                                {
+                                    Console.Write(answer[l] + " ");
+                                }
+                                Console.WriteLine();
+                                break;
+                            }
+                            Console.WriteLine("Ошибка ввода.");
+                        }
+                        break;
+                    case 19:
+                        while (true) // задание 4.7
+                        {
+                            Console.Write("Задание №4.7. Введите размер массива: ");
+                            string x = Console.ReadLine();
+                            if (uint.TryParse(x, out uint num))
+                            {
+                                uint arrSize = num;
+                                int[] arr = new int[arrSize];
+                                for (int i = 0; i < arrSize; i++)
+                                {
+                                    arr[i] = rnd.Next(1, 10);
+                                }
+                                for (int j = 0; j < arrSize; j++)
+                                {
+                                    Console.Write(arr[j] + " ");
+                                }
+                                Console.WriteLine();
+                                Console.WriteLine("Ответ: ");
+                                int[] answer = prog.reverseBack(arr);
+                                for (int j = 0; j < answer.Length; j++)
+                                {
+                                    Console.Write(answer[j] + " ");
+                                }
+                                Console.WriteLine();
+                                break;
+                            }
+                            Console.WriteLine("Ошибка ввода.");
+                        }
+                        break;
+                    case 20:
+                        while (true) // задание 4.9
+                        {
+                            Console.Write("Задание №4.9. Введите размер массива: ");
+                            string a = Console.ReadLine();
+                            Console.Write("Введите число х: ");
+                            string x = Console.ReadLine();
+                            if (uint.TryParse(a, out uint num1) && int.TryParse(x, out int num2))
+                            {
+                                uint arrSize = num1;
+                                int[] arr = new int[arrSize];
+                                for (int i = 0; i < arrSize; i++)
+                                {
+                                    arr[i] = rnd.Next(1, 10);
+                                }
+                                for (int j = 0; j < arrSize; j++)
+                                {
+                                    Console.Write(arr[j] + " ");
+                                }
+                                Console.WriteLine();
+                                Console.WriteLine("Ответ: ");
+                                int[] answer = prog.findAll(arr, num2);
+                                for (int j = 0; j < answer.Length; j++)
+                                {
+                                    Console.Write(answer[j] + " ");
+                                }
+                                Console.WriteLine();
+                                break;
+                            }
+                            Console.WriteLine("Ошибка ввода.");
+                        }
+                        while (true) // задание 4.9
+                        {
+                            Console.Write("Задание №4.9. Введите размер массива: ");
+                            string a = Console.ReadLine();
+                            Console.Write("Введите число х: ");
+                            string x = Console.ReadLine();
+                            if (uint.TryParse(a, out uint num1) && int.TryParse(x, out int num2))
+                            {
+                                uint arrSize = num1;
+                                int[] arr = new int[arrSize];
+                                for (int i = 0; i < arrSize; i++)
+                                {
+                                    arr[i] = rnd.Next(1, 10);
+                                }
+                                for (int j = 0; j < arrSize; j++)
+                                {
+                                    Console.Write(arr[j] + " ");
+                                }
+                                Console.WriteLine();
+                                Console.WriteLine("Ответ: ");
+                                int[] answer = prog.findAll(arr, num2);
+                                for (int j = 0; j < answer.Length; j++)
+                                {
+                                    Console.Write(answer[j] + " ");
+                                }
+                                Console.WriteLine();
+                                break;
+                            }
+                            Console.WriteLine("Ошибка ввода.");
+                        }
+                        break;
+                    default:
+                        Console.WriteLine("Нет такого варианта");
+                        break;
                 }
-                Console.WriteLine("Ошибка ввода.");
-            }
-
-            while (true) // Задание 1.3
-            {
-                Console.Write("Задание №1.3. Введите символ из перечня: 0 1 2 3 4 5 6 7 8 9: ");
-                string x = Console.ReadLine();
-                if (char.TryParse(x, out char num) && Char.IsDigit(Convert.ToChar(x)))
-                {
-                    Console.WriteLine("Ответ: {0}", prog.charToNum(num));
-                    break;
-                }
-                Console.WriteLine("Ошибка ввода.");
-            }
-
-            while (true) // Задание 1.5
-            {
-                Console.Write("Задание №1.5. Введите число: ");
-                string x = Console.ReadLine();
-                if (int.TryParse(x, out int num))
-                {
-                    Console.WriteLine("Ответ: {0}", prog.is2Digits(num));
-                    break;
-                }
-                Console.WriteLine("Ошибка ввода.");
-            }
-
-            while (true) // Задание 1.7
-            {
-                Console.Write("Задание №1.7. Введите числовой диапазон и число: ");
-                string a = Console.ReadLine();
-                string b = Console.ReadLine();
-                string x = Console.ReadLine();
-                if (int.TryParse(a, out int num1) && int.TryParse(b, out int num2) && int.TryParse(x, out int num3))
-                {
-                    Console.WriteLine("Ответ: {0}", prog.isInRange(num1, num2, num3));
-                    break;
-                }
-                Console.WriteLine("Ошибка ввода.");
-            }
-
-            while (true) // Задание 1.9
-            {
-                Console.Write("Задание №1.9. Введите три одинаковых числа: ");
-                string a = Console.ReadLine();
-                string b = Console.ReadLine();
-                string с = Console.ReadLine();
-                if (int.TryParse(a, out int num1) && int.TryParse(b, out int num2) && int.TryParse(с, out int num3))
-                {
-                    Console.WriteLine("Ответ: {0}", prog.isEqual(num1, num2, num3));
-                    break;
-                }
-                Console.WriteLine("Ошибка ввода.");
-            }
-
-            while (true) // задание 2.1
-            {
-                Console.Write("Задание №2.1. Введите число: ");
-                string a = Console.ReadLine();
-                if (int.TryParse(a, out int num))
-                {
-                    Console.WriteLine("Ответ: {0}", prog.abs(num));
-                    break;
-                }
-                Console.WriteLine("Ошибка ввода.");
-            }
-
-            while (true) // задание 2.3
-            {
-                Console.Write("Задание №2.3. Введите число: ");
-                string a = Console.ReadLine();
-                if (int.TryParse(a, out int num))
-                {
-                    Console.WriteLine("Ответ: {0}", prog.is35(num));
-                    break;
-                }
-                Console.WriteLine("Ошибка ввода.");
-            }
-
-            while (true) // задание 2.5
-            {
-                Console.Write("Задание №2.5. Введите число: ");
-                string a = Console.ReadLine();
-                string b = Console.ReadLine();
-                string c = Console.ReadLine();
-                if (int.TryParse(a, out int num1) && int.TryParse(b, out int num2) && int.TryParse(c, out int num3))
-                {
-                    Console.WriteLine("Ответ: {0}", prog.max3(num1, num2, num3));
-                    break;
-                }
-                Console.WriteLine("Ошибка ввода.");
-            }
-
-            while (true) // задание 2.7
-            {
-                Console.Write("Задание №2.7. Введите число: ");
-                string a = Console.ReadLine();
-                string b = Console.ReadLine();
-                if (int.TryParse(a, out int num1) && int.TryParse(b, out int num2))
-                {
-                    Console.WriteLine("Ответ: {0}", prog.sum2(num1, num2));
-                    break;
-                }
-                Console.WriteLine("Ошибка ввода.");
-            }
-
-            while (true) // задание 2.9
-            {
-                Console.Write("Задание №2.9. Введите число: ");
-                string x = Console.ReadLine();
-                if (int.TryParse(x, out int num))
-                {
-                    Console.WriteLine("Ответ: {0}", prog.day(num));
-                    break;
-                }
-                Console.WriteLine("Ошибка ввода.");
-            }
-
-            while (true) // задание 3.1
-            {
-                Console.Write("Задание №3.1. Введите число: ");
-                string x = Console.ReadLine();
-                if (int.TryParse(x, out int num))
-                {
-                    Console.WriteLine("Ответ: {0}", prog.listNums(num));
-                    break;
-                }
-                Console.WriteLine("Ошибка ввода.");
-            }
-
-            while (true) // задание 3.3
-            {
-                Console.Write("Задание №3.3. Введите число: ");
-                string x = Console.ReadLine();
-                if (int.TryParse(x, out int num))
-                {
-                    Console.WriteLine("Ответ: {0}", prog.chet(num));
-                    break;
-                }
-                Console.WriteLine("Ошибка ввода.");
-            }
-
-            while (true) // задание 3.5
-            {
-                Console.Write("Задание №3.5. Введите число: ");
-                string x = Console.ReadLine();
-                if (long.TryParse(x, out long num))
-                {
-                    Console.WriteLine("Ответ: {0}", prog.numLen(num));
-                    break;
-                }
-                Console.WriteLine("Ошибка ввода.");
-            }
-
-            while (true) // задание 3.7
-            {
-                Console.Write("Задание №3.7. Введите число: ");
-                string x = Console.ReadLine();
-                if (int.TryParse(x, out int num))
-                {
-                    Console.WriteLine("Ответ: ");
-                    prog.square(num);
-                    break;
-                }
-                Console.WriteLine("Ошибка ввода.");
-            }
-
-            while (true) // задание 3.9
-            {
-                Console.Write("Задание №3.9. Введите число: ");
-                string x = Console.ReadLine();
-                if (int.TryParse(x, out int num))
-                {
-                    Console.WriteLine("Ответ: ");
-                    prog.rightTriangle(num);
-                    break;
-                }
-                Console.WriteLine("Ошибка ввода.");
-            }
-
-            while (true) // задание 4.1
-            {
-                Console.Write("Задание №4.1. Введите размер массива: ");
-                string a = Console.ReadLine();
-                Console.WriteLine("Введите число x: ");
-                string x = Console.ReadLine();
-                if (int.TryParse(a, out int num1) && int.TryParse(x, out int num2))
-                {
-                    int arrSize = num1;
-                    int[] arr = new int[arrSize];
-                    for (int i = 0; i < arrSize; i++)
-                    {
-                        arr[i] = rnd.Next(1, 10);
-                    }
-                    for (int j = 0; j < arrSize; j++)
-                    {
-                        Console.Write(arr[j] + " ");
-                    }
-                    Console.WriteLine();
-                    Console.WriteLine("Ответ: {0}", prog.findFirst(arr, num2));
-                    break;
-                }
-                Console.WriteLine("Ошибка ввода.");
-            }
-
-            while (true) // задание 4.3
-            {
-                Console.Write("Задание №4.3. Введите размер массива: ");
-                string x = Console.ReadLine();
-                if (int.TryParse(x, out int num))
-                {
-                    int arrSize = num;
-                    int[] arr = new int[arrSize];
-                    for (int i = 0; i < arrSize; i++)
-                    {
-                        arr[i] = rnd.Next(-9, 10);
-                    }
-                    for (int j = 0; j < arrSize; j++)
-                    {
-                        Console.Write(arr[j] + " ");
-                    }
-                    Console.WriteLine();
-                    Console.WriteLine("Ответ: {0}", prog.maxAbs(arr));
-                    break;
-                }
-                Console.WriteLine("Ошибка ввода.");
-            }
-
-            while (true) // задание 4.5
-            {
-                Console.Write("Задание №4.5. Введите размер массива: ");
-                string x = Console.ReadLine();
-                Console.Write("Введите размер второго массива: ");
-                string y = Console.ReadLine();
-                Console.Write("Введите позицию: ");
-                string z = Console.ReadLine();
-                if (int.TryParse(x, out int num1) && int.TryParse(y, out int num2) && int.TryParse(z, out int num3))
-                {
-                    int arrSize = num1;
-                    int insSize = num2;
-                    int pos = num3;
-                    int[] arr = new int[arrSize];
-                    for (int i = 0; i < arrSize; i++)
-                    {
-                        arr[i] = rnd.Next(0, 10);
-                    }
-                    int[] ins = new int[insSize];
-                    for (int i = 0; i < insSize; i++)
-                    {
-                        ins[i] = rnd.Next(0, 10);
-                    }
-                    for (int j = 0; j < arrSize; j++)
-                    {
-                        Console.Write(arr[j] + " ");
-                    }
-                    Console.WriteLine();
-                    for (int k = 0; k < insSize; k++)
-                    {
-                        Console.Write(ins[k] + " ");
-                    }
-                    Console.WriteLine();
-                    Console.WriteLine("Ответ: ");
-                    int[] answer = prog.add(arr, ins, pos);
-                    for (int l = 0; l < answer.Length; l++)
-                    {
-                        Console.Write(answer[l] + " ");
-                    }
-                    Console.WriteLine();
-                    break;
-                }
-                Console.WriteLine("Ошибка ввода.");
-            }
-
-            while (true) // задание 4.7
-            {
-                Console.Write("Задание №4.7. Введите размер массива: ");
-                string x = Console.ReadLine();
-                if (int.TryParse(x, out int num))
-                {
-                    int arrSize = num;
-                    int[] arr = new int[arrSize];
-                    for (int i = 0; i < arrSize; i++)
-                    {
-                        arr[i] = rnd.Next(1, 10);
-                    }
-                    for (int j = 0; j < arrSize; j++)
-                    {
-                        Console.Write(arr[j] + " ");
-                    }
-                    Console.WriteLine();
-                    Console.WriteLine("Ответ: ");
-                    int[] answer = prog.reverseBack(arr);
-                    for (int j = 0; j < answer.Length; j++)
-                    {
-                        Console.Write(answer[j] + " ");
-                    }
-                    Console.WriteLine();
-                    break;
-                }
-                Console.WriteLine("Ошибка ввода.");
-            }
-
-            while (true) // задание 4.9
-            {
-                Console.Write("Задание №4.9. Введите размер массива: ");
-                string a = Console.ReadLine();
-                Console.Write("Введите число х: ");
-                string x = Console.ReadLine();
-                if (int.TryParse(a, out int num1) && int.TryParse(x, out int num2))
-                {
-                    int arrSize = num1;
-                    int[] arr = new int[arrSize];
-                    for (int i = 0; i < arrSize; i++)
-                    {
-                        arr[i] = rnd.Next(1, 10);
-                    }
-                    for (int j = 0; j < arrSize; j++)
-                    {
-                        Console.Write(arr[j] + " ");
-                    }
-                    Console.WriteLine();
-                    Console.WriteLine("Ответ: ");
-                    int[] answer = prog.findAll(arr, num2);
-                    for (int j = 0; j < answer.Length; j++)
-                    {
-                        Console.Write(answer[j] + " ");
-                    }
-                    Console.WriteLine();
-                    break;
-                }
-                Console.WriteLine("Ошибка ввода.");
             }
         }
         public double fraction(double x)
