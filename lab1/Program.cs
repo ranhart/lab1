@@ -417,7 +417,8 @@ namespace lab1
         }
         public double fraction(double x)
         {
-            return Math.Round(x - (int)x, 15);
+            if (Math.Round(x - (int)x, 15) < 0) return -Math.Round(x - (int)x, 15);
+            else return Math.Round(x - (int)x, 15);
         }
 
         public int charToNum(char x)
